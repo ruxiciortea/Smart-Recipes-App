@@ -10,7 +10,7 @@ import UIKit
 let kWelcomeMessage = "Welcome to Smart Recipes!"
 let kSignupMessage = "Don't have an account?"
 
-class LoginViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var appLogoImageView: UIImageView!
     @IBOutlet weak var loginViewTitle: UILabel!
@@ -20,14 +20,42 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setDelegates()
         setupLabels()
     }
 
+    @IBAction func didPRessLoginButton(_ sender: Any) {
+        let email: String = emailTextField.text ?? ""
+        let password: String = passwordTextField.text ?? ""
 
+        if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+          return
+        }
+        
+        loginUser(email: email, password: password)
+    }
+
+    private func setDelegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
     private func setupLabels() {
         loginViewTitle.text = kWelcomeMessage
         signupMessageLabel.text = kSignupMessage
+    }
+    
+    private func loginUser(email: String, password: String) {
+        Task {
+            guard let token = try? await UserManager().login(email: email, password: password) else {
+                print("Failed")
+                return
+            }
+            
+            print(token.token)
+            let successLogin = KeychainManager.saveToken(token: token)
+        }
     }
 
 }
