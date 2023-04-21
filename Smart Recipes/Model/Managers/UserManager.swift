@@ -31,4 +31,10 @@ class UserManager: NSObject {
         return token
     }
     
+    // MARK: - User Details
+    func userData(auth: Token) async throws -> User? {
+        let user = try? await UserAPI.userData(auth: auth)
+        return user
+    }
+    
 }

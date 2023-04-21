@@ -55,6 +55,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             
             print(token.token)
             let successLogin = KeychainManager.saveToken(token: token)
+            
+            if successLogin {
+                performSegue(withIdentifier: "ShowApp", sender: nil)
+            }
         }
     }
 

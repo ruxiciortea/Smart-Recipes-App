@@ -7,16 +7,18 @@
 
 import Foundation
 
-let kBaseUrl = "http://localhost:8080/api/auth/"
+let kAuthBaseUrl = "http://localhost:8080/api/auth/"
+let kUserBaseUrl = "http://localhost:8080/api/user/"
 let kAuth = "authenticate"
 let kRegister = "register"
+let kDetails = "details"
 let kGet = "get"
 
 class UserAPI: NSObject {
 
     // MARK: - Login
     static func login(email: String, password: String) async throws -> Token? {
-        guard let url = URL(string: kBaseUrl + kAuth) else { return nil }
+        guard let url = URL(string: kAuthBaseUrl + kAuth) else { return nil }
         
         let bodyData = ["email" : email, "password": password]
         let jsonBody = try? JSONEncoder().encode(bodyData)
@@ -43,7 +45,7 @@ class UserAPI: NSObject {
                          password: String,
                          reenteredPAssword: String,
                          role: String) async throws -> Token? {
-        guard let url = URL(string: kBaseUrl + kRegister) else { return nil }
+        guard let url = URL(string: kAuthBaseUrl + kRegister) else { return nil }
         
         let bodyData = [
             "firstname" : firstName,
@@ -68,6 +70,25 @@ class UserAPI: NSObject {
         }
         
         return token
+    }
+    
+    // MARK: - User Data
+    static func userData(auth: Token) async throws -> User? {
+        guard let url = URL(string: kUserBaseUrl + kDetails) else { return nil }
+                
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(auth.token)", forHTTPHeaderField: "Authorization")
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
+        guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+            return nil
+        }
+        
+        return user
     }
     
 }

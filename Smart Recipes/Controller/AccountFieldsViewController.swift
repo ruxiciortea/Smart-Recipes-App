@@ -73,6 +73,7 @@ class AccountFieldsViewController: UIViewController, UITextFieldDelegate {
             
             print(token.token)
             let successRegister = KeychainManager.saveToken(token: token)
+            performSegue(withIdentifier: "ShowApp", sender: nil)
         }
     }
 
