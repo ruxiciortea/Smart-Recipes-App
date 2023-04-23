@@ -11,6 +11,8 @@ let kAuthBaseUrl = "http://localhost:8080/api/auth/"
 let kUserBaseUrl = "http://localhost:8080/api/user/"
 let kAuth = "authenticate"
 let kRegister = "register"
+let kUpdate = "update"
+let kDelete = "delete"
 let kDetails = "details"
 let kGet = "get"
 
@@ -72,6 +74,39 @@ class UserAPI: NSObject {
         return token
     }
     
+    // MARK: - Update User Data
+    static func update(auth: Token,
+                       firstName: String,
+                       lastName: String,
+                       email: String,
+                       role: String) async throws -> User? {
+        guard let url = URL(string: kUserBaseUrl + kUpdate) else { return nil }
+        
+        let bodyData = [
+            "firstname" : firstName,
+            "lastname" : lastName,
+            "email" : email,
+            "role" : role
+        ]
+        
+        let jsonBody = try? JSONEncoder().encode(bodyData)
+                
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = jsonBody
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(auth.token)", forHTTPHeaderField: "Authorization")
+        
+        let (data, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
+        guard let user = try? JSONDecoder().decode(User.self, from: data) else {
+            return nil
+        }
+        
+        return user
+    }
+    
     // MARK: - User Data
     static func userData(auth: Token) async throws -> User? {
         guard let url = URL(string: kUserBaseUrl + kDetails) else { return nil }
@@ -89,6 +124,22 @@ class UserAPI: NSObject {
         }
         
         return user
+    }
+    
+    // MARK: - Delete USer
+    static func delete(auth: Token) async throws -> Bool {
+        guard let url = URL(string: kUserBaseUrl + kDelete) else { return false }
+                
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(auth.token)", forHTTPHeaderField: "Authorization")
+        
+        let (_, response) = try await URLSession.shared.data(for: urlRequest)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { return false }
+        
+        return true
     }
     
 }

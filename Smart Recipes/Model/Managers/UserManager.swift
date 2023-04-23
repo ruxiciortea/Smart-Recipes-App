@@ -31,10 +31,30 @@ class UserManager: NSObject {
         return token
     }
     
+    // MARK: - Update
+    func update(auth: Token,
+                  firstName: String,
+                  lastName: String,
+                  email: String,
+                  role: String) async throws -> User? {
+        let user = try? await UserAPI.update(auth: auth,
+                                              firstName: firstName,
+                                              lastName: lastName,
+                                              email: email,
+                                              role: role)
+        return user
+    }
+    
     // MARK: - User Details
     func userData(auth: Token) async throws -> User? {
         let user = try? await UserAPI.userData(auth: auth)
         return user
+    }
+    
+    // MARK: - Delete User
+    func delete(auth: Token) async throws -> Bool {
+        guard let response = try? await UserAPI.delete(auth: auth) else { return false }
+        return response
     }
     
 }

@@ -15,7 +15,7 @@
 		6327455929F1435A003D5147 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327455829F1435A003D5147 /* KeychainWrapper.swift */; };
 		6327455B29F14907003D5147 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327455A29F14907003D5147 /* KeychainItemAccessibility.swift */; };
 		6327455D29F149F9003D5147 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327455C29F149F9003D5147 /* KeychainManager.swift */; };
-		6327456129F15059003D5147 /* AccountFieldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327456029F15059003D5147 /* AccountFieldsViewController.swift */; };
+		6327456129F15059003D5147 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327456029F15059003D5147 /* CreateAccountViewController.swift */; };
 		6327456429F186CE003D5147 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327456329F186CE003D5147 /* TabBarViewController.swift */; };
 		6327456629F186D9003D5147 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327456529F186D9003D5147 /* ProfileViewController.swift */; };
 		6327456829F2E6B3003D5147 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327456729F2E6B3003D5147 /* Recipe.swift */; };
@@ -34,6 +34,7 @@
 		6378E02929C71714007052AD /* Smart_RecipesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E02829C71714007052AD /* Smart_RecipesUITests.swift */; };
 		6378E02B29C71714007052AD /* Smart_RecipesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E02A29C71714007052AD /* Smart_RecipesUITestsLaunchTests.swift */; };
 		6378E03E29C75B11007052AD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6378E03C29C75B11007052AD /* LoginViewController.swift */; };
+		63D8C4A529F55BFD0057C3F9 /* EditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D8C4A429F55BFD0057C3F9 /* EditAccountViewController.swift */; };
 		C659509A6970BB7558DBB6A1 /* Pods_Smart_Recipes_Smart_RecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186C207A392C2FD4576609EE /* Pods_Smart_Recipes_Smart_RecipesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +79,7 @@
 		6327455829F1435A003D5147 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		6327455A29F14907003D5147 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		6327455C29F149F9003D5147 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		6327456029F15059003D5147 /* AccountFieldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountFieldsViewController.swift; sourceTree = "<group>"; };
+		6327456029F15059003D5147 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		6327456329F186CE003D5147 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6327456529F186D9003D5147 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6327456729F2E6B3003D5147 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		6378E02829C71714007052AD /* Smart_RecipesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_RecipesUITests.swift; sourceTree = "<group>"; };
 		6378E02A29C71714007052AD /* Smart_RecipesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_RecipesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6378E03C29C75B11007052AD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		63D8C4A429F55BFD0057C3F9 /* EditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountViewController.swift; sourceTree = "<group>"; };
 		70A9FBB2BD194F5FECA10128 /* Pods-Smart RecipesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart RecipesTests.release.xcconfig"; path = "Target Support Files/Pods-Smart RecipesTests/Pods-Smart RecipesTests.release.xcconfig"; sourceTree = "<group>"; };
 		71254417023D938DC319D87C /* Pods-Smart Recipes-Smart RecipesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Recipes-Smart RecipesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Smart Recipes-Smart RecipesUITests/Pods-Smart Recipes-Smart RecipesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		761F1E1A2BE050AD50FC637F /* Pods-Smart Recipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart Recipes.release.xcconfig"; path = "Target Support Files/Pods-Smart Recipes/Pods-Smart Recipes.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,10 +237,11 @@
 			isa = PBXGroup;
 			children = (
 				6378E03C29C75B11007052AD /* LoginViewController.swift */,
-				6327456029F15059003D5147 /* AccountFieldsViewController.swift */,
+				6327456029F15059003D5147 /* CreateAccountViewController.swift */,
 				6327456329F186CE003D5147 /* TabBarViewController.swift */,
 				6327456529F186D9003D5147 /* ProfileViewController.swift */,
 				6327456F29F2F336003D5147 /* ExploreRecipesViewController.swift */,
+				63D8C4A429F55BFD0057C3F9 /* EditAccountViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -479,10 +482,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D8C4A529F55BFD0057C3F9 /* EditAccountViewController.swift in Sources */,
 				6327456C29F2F198003D5147 /* RecipesAPI.swift in Sources */,
 				6327456E29F2F1A3003D5147 /* RecipesManager.swift in Sources */,
 				6327457029F2F336003D5147 /* ExploreRecipesViewController.swift in Sources */,
-				6327456129F15059003D5147 /* AccountFieldsViewController.swift in Sources */,
+				6327456129F15059003D5147 /* CreateAccountViewController.swift in Sources */,
 				632399D429C75E7D00EF5F8C /* User.swift in Sources */,
 				6327456A29F2E6D1003D5147 /* RecipeIngredient.swift in Sources */,
 				6327455629F13AC1003D5147 /* Token.swift in Sources */,
