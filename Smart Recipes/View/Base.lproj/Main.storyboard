@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hp3-eh-AeU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hp3-eh-AeU">
                                 <rect key="frame" x="98.333333333333329" y="123.99999999999999" width="196.33333333333337" height="196.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hp3-eh-AeU" secondAttribute="height" id="TW7-3O-ZuM"/>
@@ -55,25 +55,48 @@
                                 <rect key="frame" x="276.66666666666669" y="611.33333333333337" width="66.333333333333314" height="30"/>
                                 <color key="backgroundColor" red="0.5647059083" green="0.5647059083" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="CkX-ap-0Ct"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="rJI-Yh-qUi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign up">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="xlx-BB-4Ff" kind="show" id="HbQ-8h-5Fw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiK-3s-u8L">
-                                <rect key="frame" x="158.66666666666666" y="681.33333333333337" width="75.666666666666657" height="38"/>
+                                <rect key="frame" x="151.66666666666666" y="681.33333333333337" width="90" height="38"/>
                                 <color key="backgroundColor" red="0.27203437689999999" green="0.59565645460000005" blue="0.39997136589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="RuG-en-xqZ"/>
+                                    <constraint firstAttribute="height" constant="38" id="sS8-Co-tYV"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowHeight">
+                                        <size key="value" width="0.0" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didPRessLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IBA-EA-Ym3"/>
                                 </connections>
@@ -174,16 +197,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZg-Qm-UF6">
-                                <rect key="frame" x="112.66666666666669" y="754" width="168" height="38"/>
+                                <rect key="frame" x="106.66666666666669" y="754" width="180" height="38"/>
                                 <color key="backgroundColor" red="0.27203437689999999" green="0.59565645460000005" blue="0.39997136589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="rCV-rK-ixe"/>
+                                    <constraint firstAttribute="height" constant="38" id="y2t-RO-v77"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Create Account">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didPRessLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9sq-rm-aqB"/>
                                     <action selector="didPressCreateButton:" destination="xlx-BB-4Ff" eventType="touchUpInside" id="7JB-IS-TLk"/>
+                                    <segue destination="dh5-XW-EWG" kind="presentation" identifier="ShowApp" modalPresentationStyle="fullScreen" id="xeu-79-8Xp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -258,21 +294,45 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIf-BC-P5o">
-                                <rect key="frame" x="130.33333333333337" y="663" width="132.66666666666663" height="35"/>
+                                <rect key="frame" x="121.66666666666669" y="663" width="150" height="35"/>
                                 <color key="backgroundColor" red="0.66309660670000004" green="0.63361853359999998" blue="0.70196968319999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="6Qt-4M-SFt"/>
+                                    <constraint firstAttribute="width" constant="150" id="kRT-VA-xeh"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Update Profile"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="DhS-fT-b9M" kind="presentation" id="NTd-Ac-U7W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfH-bo-2Yc">
-                                <rect key="frame" x="133.33333333333334" y="728" width="126.33333333333334" height="35"/>
+                                <rect key="frame" x="129" y="728" width="135" height="35"/>
                                 <color key="backgroundColor" red="0.93542295694351196" green="0.33127049531526309" blue="0.3482405630082363" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="R9C-Ou-Q6U"/>
+                                    <constraint firstAttribute="width" constant="135" id="u9i-JU-XZY"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Delete Profile"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="17"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didPressDeleteButton:" destination="TR8-lO-vHz" eventType="touchUpInside" id="1Jw-NJ-wJR"/>
                                 </connections>
@@ -423,6 +483,14 @@
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="19"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didPressCreateButton:" destination="DhS-fT-b9M" eventType="touchUpInside" id="3dL-9h-qtx"/>
                                 </connections>
@@ -463,7 +531,11 @@
             <point key="canvasLocation" x="1969" y="1446"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zgf-zS-gnx"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="AppIcon" width="640" height="640"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
